@@ -1,0 +1,323 @@
+---
+Detective: 
+  - '[SH.DynamoDB.1] DynamoDB tables should automatically scale capacity with demand' : XQGJDGQQKGCR
+  - '[SH.DynamoDB.2] DynamoDB tables should have point-in-time recovery enabled' : ITCPEFZTGHOG
+  - '[AWS-GR_EBS_SNAPSHOT_PUBLIC_RESTORABLE_CHECK] Detect whether Amazon EBS snapshots are restorable by all AWS accounts' : AWS-GR_EBS_SNAPSHOT_PUBLIC_RESTORABLE_CHECK
+  - '[AWS-GR_EC2_INSTANCE_NO_PUBLIC_IP] Detect whether any Amazon EC2 instance has an associated public IPv4 address' : AWS-GR_EC2_INSTANCE_NO_PUBLIC_IP
+  - '[AWS-GR_NO_UNRESTRICTED_ROUTE_TO_IGW] Detect whether public routes exist in the route table for an Internet Gateway (IGW)' : AWS-GR_NO_UNRESTRICTED_ROUTE_TO_IGW
+  - '[AWS-GR_SUBNET_AUTO_ASSIGN_PUBLIC_IP_DISABLED] Detect whether any Amazon VPC subnets are assigned a public IP address' : AWS-GR_SUBNET_AUTO_ASSIGN_PUBLIC_IP_DISABLED
+  - '[SH.EC2.1] EBS snapshots should not be publicly restorable' : FKQAQCYRILAK
+  - '[SH.EC2.10] Amazon EC2 should be configured to use VPC endpoints that are created for the Amazon EC2 service' : VAUYZRKDCKOY
+  - '[SH.EC2.15] EC2 subnets should not automatically assign public IP addresses' : RJQGGVJZEBLT
+  - '[SH.EC2.16] Unused Network Access Control Lists should be removed' : LITUIAJFCNLG
+  - '[SH.EC2.17] EC2 instances should not use multiple ENIs' : ODNGXSKYGCAN
+  - '[SH.EC2.18] Security groups should only allow unrestricted incoming traffic for authorized ports' : BKEEVLXJOIZI
+  - '[SH.EC2.19] Security groups should not allow unrestricted access to ports with high risk' : KTVMUAUBZNOK
+  - '[SH.EC2.2] The VPC default security group should not allow inbound and outbound traffic' : CBXAVYGTSXPR
+  - '[SH.EC2.21] Network ACLs should not allow ingress from 0.0.0.0/0 to port 22 or port 3389' : AVYCVZQFCQNU
+  - '[SH.EC2.22] Unused EC2 security groups should be removed' : DKOGNVMOVXDM
+  - '[SH.EC2.3] Attached EBS volumes should be encrypted at-rest' : GPEXDJMATYQR
+  - '[SH.EC2.4] Stopped EC2 instances should be removed after a specified time period' : GTXSQEJWOBFI
+  - '[SH.EC2.6] VPC flow logging should be enabled in all VPCs' : BEEYZGSRRAZM
+  - '[SH.EC2.7] EBS default encryption should be enabled' : AIOQAEVYZWFE
+  - '[SH.EC2.8] EC2 instances should use Instance Metadata Service Version 2 (IMDSv2)' : RZXGVSCOVETI
+  - '[SH.EC2.9] EC2 instances should not have a public IPv4 address' : MINKVOGPJARR
+  - '[SH.Kinesis.1] Kinesis streams should be encrypted at rest' : LKIISYYCVINO
+  - '[SH.SageMaker.1] Amazon SageMaker notebook instances should not have direct internet access' : RKGYZUOFZLRQ
+  - '[SH.SSM.1] EC2 instances should be managed by AWS Systems Manager' : LYPKGNLPNWHL
+  - '[SH.SSM.2] EC2 instances managed by Systems Manager should have a patch compliance status of COMPLIANT after a patch installation' : RDSQHZJJNJDY
+  - '[SH.SSM.3] EC2 instances managed by Systems Manager should have an association compliance status of COMPLIANT' : KBRZYOMGLHXE
+  - '[AWS-GR_AUTOSCALING_LAUNCH_CONFIG_PUBLIC_IP_DISABLED] Detect whether public IP addresses for Amazon EC2 Auto Scaling are enabled through launch configurations' : AWS-GR_AUTOSCALING_LAUNCH_CONFIG_PUBLIC_IP_DISABLED
+  - '[SH.AutoScaling.1] Auto scaling groups associated with a load balancer should use load balancer health checks' : ZWORVQKMSSVN
+  - '[SH.AutoScaling.2] Amazon EC2 Auto Scaling group should cover multiple Availability Zones' : WPQFDZGIKXEN
+  - '[SH.AutoScaling.3] Auto Scaling group launch configurations should configure EC2 instances to require Instance Metadata Service Version 2 (IMDSv2)' : HHCYIDJRAZNC
+  - '[SH.AutoScaling.4] Auto Scaling group launch configuration should not have a metadata response hop limit greater than 1' : IKDSUOXJFKTR
+  - '[SH.Autoscaling.5] Amazon EC2 instances launched using Auto Scaling group launch configurations should not have Public IP addresses' : QVGJOLZXDNNY
+  - '[SH.AutoScaling.6] Auto Scaling groups should use multiple instance types in multiple Availability Zones' : BTMIFVPUSJBQ
+  - '[SH.AutoScaling.9] EC2 Auto Scaling groups should use EC2 launch templates' : VEIRXQKRRWAP
+  - '[SH.ECR.1] ECR private repositories should have image scanning configured' : OZQOTZVQZXUY
+  - '[SH.ECR.2] ECR private repositories should have tag immutability configured' : ASKLTEEGJOIL
+  - '[SH.ECR.3] ECR repositories should have at least one lifecycle policy configured' : UDDDYEJAYHXP
+  - '[SH.ECS.1] Amazon ECS task definitions should have secure networking modes and user definitions.' : OPQLRHGSJJBU
+  - '[SH.ECS.10] ECS Fargate services should run on the latest Fargate platform version' : WWVYZKSEXPPK
+  - '[SH.ECS.12] ECS clusters should use Container Insights' : LWIVFPXZOSHV
+  - '[SH.ECS.2] ECS services should not have public IP addresses assigned to them automatically' : JCFLSLPRFWPS
+  - '[SH.ECS.3] ECS task definitions should not share the hosts process namespace' : UFYTWRSCKNKN
+  - '[SH.ECS.4] ECS containers should run as non-privileged' : ZTDLFKNABSTB
+  - '[SH.ECS.5] ECS containers should be limited to read-only access to root filesystems' : KPIETXSDELVX
+  - '[SH.ECS.8] Secrets should not be passed as container environment variables' : LJCQVFMBPQAV
+  - '[SH.EFS.1] Elastic File System should be configured to encrypt file data at-rest using AWS KMS' : DAAYOZMUFPOA
+  - '[SH.EFS.2] Amazon EFS volumes should be in backup plans' : AKKPASMFZEGR
+  - '[SH.EFS.3] EFS access points should enforce a root directory' : YLSKXEGSHZFO
+  - '[SH.EFS.4] EFS access points should enforce a user identity' : IINULENBTTWX
+  - '[AWS-GR_EKS_ENDPOINT_NO_PUBLIC_ACCESS] Detect whether an Amazon EKS endpoint is blocked from public access' : AWS-GR_EKS_ENDPOINT_NO_PUBLIC_ACCESS
+  - '[SH.EKS.2] EKS clusters should run on a supported Kubernetes version' : RDAUUJAGICFK
+  - '[AWS-GR_EMR_MASTER_NO_PUBLIC_IP] Detect whether any Amazon EMR cluster master nodes have public IP addresses' : AWS-GR_EMR_MASTER_NO_PUBLIC_IP
+  - '[SH.EMR.1] Amazon Elastic MapReduce cluster master nodes should not have public IP addresses' : IFSMMPPVKOTA
+  - '[SH.GuardDuty.1] GuardDuty should be enabled' : HHVKNVANXXAA
+  - '[AWS-GR_ELASTICSEARCH_IN_VPC_ONLY] Detect whether an Amazon OpenSearch Service domain is in Amazon VPC' : AWS-GR_ELASTICSEARCH_IN_VPC_ONLY
+  - '[SH.ES.1] Elasticsearch domains should have encryption at-rest enabled' : NKJEYRKBJVFV
+  - '[SH.ES.2] Elasticsearch domains should be in a VPC' : QCHIJWURAOYF
+  - '[SH.ES.3] Elasticsearch domains should encrypt data sent between nodes' : QYNCJNDFTBXE
+  - '[SH.ES.4] Elasticsearch domain error logging to CloudWatch Logs should be enabled' : STVVHFHXKVQM
+  - '[SH.ES.5] Elasticsearch domains should have audit logging enabled' : MMCPMMUFJIYU
+  - '[SH.ES.6] Elasticsearch domains should have at least three data nodes' : RVPSMUYBMOHQ
+  - '[SH.ES.7] Elasticsearch domains should be configured with at least three dedicated master nodes' : BHBTVOFTLCSB
+  - '[SH.ES.8] Connections to Elasticsearch domains should be encrypted using TLS 1.2' : FZIUYKFDZJIO
+  - '[SH.Opensearch.1] OpenSearch domains should have encryption at rest enabled' : IHCAIGKUVWBB
+  - '[SH.Opensearch.2] OpenSearch domains should be in a VPC' : GABXYPFSQLCM
+  - '[SH.Opensearch.3] OpenSearch domains should encrypt data sent between nodes' : DPIEOZVOOBXD
+  - '[SH.Opensearch.4] OpenSearch domain error logging to CloudWatch Logs should be enabled' : GADHHKSJUALK
+  - '[SH.Opensearch.5] OpenSearch domains should have audit logging enabled' : WAOBYBQZJHTA
+  - '[SH.Opensearch.6] OpenSearch domains should have at least three data nodes' : UHLKIWWGXHHO
+  - '[SH.Opensearch.7] OpenSearch domains should have fine-grained access control enabled' : TMJKCOOOPZDS
+  - '[SH.Opensearch.8] Connections to OpenSearch domains should be encrypted using TLS 1.2' : OEGCJFDHPGEM
+  - '[SH.RDS.1] RDS snapshot should be private' : UWMYPVTQGECU
+  - '[SH.RDS.10] IAM authentication should be configured for RDS instances' : QKWGQNGCDPYW
+  - '[SH.RDS.11] RDS instances should have automatic backups enabled' : IFMREHTYREKZ
+  - '[SH.RDS.13] RDS automatic minor version upgrades should be enabled' : GUYPLHFGVYSR
+  - '[SH.RDS.17] RDS DB instances should be configured to copy tags to snapshots' : DTZXJLHKFLEJ
+  - '[SH.RDS.18] RDS instances should be deployed in a VPC' : PXYEQHPGSBAU
+  - '[SH.RDS.19] An RDS event notifications subscription should be configured for critical cluster events' : NXPQTLYAEZFF
+  - '[SH.RDS.2] RDS DB Instances should prohibit public access, as determined by the PubliclyAccessible configuration' : WDBVVIVSLRNF
+  - '[SH.RDS.20] An RDS event notifications subscription should be configured for critical database instance events' : BZKHLGWSEYGS
+  - '[SH.RDS.21] An RDS event notifications subscription should be configured for critical database parameter group events' : LSOCQKOMTNUV
+  - '[SH.RDS.22] An RDS event notifications subscription should be configured for critical database security group events' : APIPOBXRVOAY
+  - '[SH.RDS.23] RDS instances should not use a database engine default port' : YMXSTCEYXBPV
+  - '[SH.RDS.25] RDS database instances should use a custom administrator username' : BBSLGPRKDCNJ
+  - '[SH.RDS.3] RDS DB instances should have encryption at-rest enabled' : VGWJZZHSYIBM
+  - '[SH.RDS.4] RDS cluster snapshots and database snapshots should be encrypted at rest' : BZBLCONTBAMD
+  - '[SH.RDS.5] RDS DB instances should be configured with multiple Availability Zones' : WAIDVEUJUPWI
+  - '[SH.RDS.6] Enhanced monitoring should be configured for RDS DB instances' : CQFNSAHGKXYR
+  - '[SH.RDS.8] RDS DB instances should have deletion protection enabled' : OHXOGCEUBHHF
+  - '[SH.RDS.9] Database logging should be enabled' : BCVVFPDGVISN
+  - '[AWS-GR_REDSHIFT_CLUSTER_PUBLIC_ACCESS_CHECK] Detect whether Amazon Redshift clusters are blocked from public access' : AWS-GR_REDSHIFT_CLUSTER_PUBLIC_ACCESS_CHECK
+  - '[SH.Redshift.1] Amazon Redshift clusters should prohibit public access' : QGVYRDNRLLPZ
+  - '[SH.Redshift.2] Connections to Amazon Redshift clusters should be encrypted in transit' : GJLYVQTNPXNP
+  - '[SH.Redshift.4] Amazon Redshift clusters should have audit logging enabled' : UGPCVGZGVGBN
+  - '[SH.Redshift.6] Amazon Redshift should have automatic upgrades to major versions enabled' : TKSZMFLVELUE
+  - '[SH.Redshift.7] Redshift clusters should use enhanced VPC routing' : EFKEWIIFDJEZ
+  - '[SH.Redshift.8] Amazon Redshift clusters should not use the default Admin username' : DGHUXCTZEDYI
+  - '[SH.Redshift.9] Redshift clusters should not use the default database name' : SMGEELXNDBKM
+  - '[AWS-GR_S3_ACCOUNT_LEVEL_PUBLIC_ACCESS_BLOCKS_PERIODIC] Detect whether Amazon S3 settings to block public access are set as true for the account' : AWS-GR_S3_ACCOUNT_LEVEL_PUBLIC_ACCESS_BLOCKS_PERIODIC
+  - '[AWS-GR_S3_VERSIONING_ENABLED] Detect whether versioning for Amazon S3 buckets is enabled' : AWS-GR_S3_VERSIONING_ENABLED
+  - '[SH.S3.1] S3 Block Public Access setting should be enabled' : XKHROGVFBBHP
+  - '[SH.S3.10] S3 buckets with versioning enabled should have lifecycle policies configured' : YXSHBLNRJEIL
+  - '[SH.S3.11] S3 buckets should have event notifications enabled' : NMYTVSNCIAIE
+  - '[SH.S3.12] S3 access control lists (ACLs) should not be used to manage user access to buckets' : BKLSQSHMCKWE
+  - '[SH.S3.13] S3 buckets should have lifecycle policies configured' : UDFSBDLMCKHG
+  - '[SH.S3.2] S3 buckets should prohibit public read access' : EUQZPHPTYCGS
+  - '[SH.S3.3] S3 buckets should prohibit public write access' : OXQICLGDWVUS
+  - '[SH.S3.4] S3 buckets should have server-side encryption enabled' : QQJFQYFRBAWX
+  - '[SH.S3.5] S3 buckets should require requests to use Secure Socket Layer' : QPIQHVFRBWEY
+  - '[SH.S3.6] S3 permissions granted to other AWS accounts in bucket policies should be restricted' : KTMNKSWVOVXN
+  - '[SH.S3.8] S3 Block Public Access setting should be enabled at the bucket-level' : BPQJQKFITSWH
+  - '[SH.S3.9] S3 bucket server access logging should be enabled' : QMWZZISJNGVG
+  - '[AWS-GR_SAGEMAKER_NOTEBOOK_NO_DIRECT_INTERNET_ACCESS] Detect whether an Amazon SageMaker notebook instance allows direct internet access' : AWS-GR_SAGEMAKER_NOTEBOOK_NO_DIRECT_INTERNET_ACCESS
+  - '[SH.SNS.1] SNS topics should be encrypted at-rest using AWS KMS' : DXZDOLIUCILU
+  - '[SH.SNS.2] Logging of delivery status should be enabled for notification messages sent to a topic' : UJGAATDFQPEB
+  - '[SH.SQS.1] Amazon SQS queues should be encrypted at rest' : AQPZJAICUMOX
+  - '[SH.EC2.20] Both VPN tunnels for an AWS Site-to-Site VPN connection should be up' : SYKJWOLYPQAG
+  - '[SH.ACM.1] Imported and ACM-issued certificates should be renewed after a specified time period' : MBCMJMZJGPLS
+  - '[SH.CloudTrail.1] CloudTrail should be enabled and configured with at least one multi-Region trail that includes read and write management events' : JSPHSKFGKKQC
+  - '[SH.CloudTrail.2] CloudTrail should have encryption at-rest enabled' : TCMJVYRGWMOM
+  - '[SH.CloudTrail.4] CloudTrail log file validation should be enabled' : RRKYSCJXWUGL
+  - '[SH.CloudTrail.5] CloudTrail trails should be integrated with Amazon CloudWatch Logs' : MSSQQOYZRTEE
+  - '[SH.CodeBuild.1] CodeBuild GitHub or Bitbucket source repository URLs should use OAuth' : IKRQWXXPRIUG
+  - '[SH.CodeBuild.2] CodeBuild project environment variables should not contain clear text credentials' : SNJCJYKNUBTW
+  - '[SH.CodeBuild.4] CodeBuild project environments should have a logging configuration' : HQVCCVHGQAZB
+  - '[SH.CodeBuild.5] CodeBuild project environments should not have privileged mode enabled' : KMMZLEUZMTDU
+  - '[AWS-GR_DMS_REPLICATION_NOT_PUBLIC] Detect whether replication instances for AWS Database Migration Service are public' : AWS-GR_DMS_REPLICATION_NOT_PUBLIC
+  - '[SH.DMS.1] Database Migration Service replication instances should not be public' : TJKXNFIKOWSN
+  - '[SH.ElasticBeanstalk.1] Elastic Beanstalk environments should have enhanced health reporting enabled' : HFVMYSGPEYDN
+  - '[SH.ElasticBeanstalk.2] Elastic Beanstalk managed platform updates should be enabled' : CIYPAZNJKRRG
+  - '[AWS-GR_IAM_USER_MFA_ENABLED] Detect whether MFA is enabled for AWS IAM users' : AWS-GR_IAM_USER_MFA_ENABLED
+  - '[AWS-GR_MFA_ENABLED_FOR_IAM_CONSOLE_ACCESS] Detect whether MFA is enabled for AWS IAM users of the AWS Console' : AWS-GR_MFA_ENABLED_FOR_IAM_CONSOLE_ACCESS
+  - '[SH.IAM.1] IAM policies should not allow full "*" administrative privileges' : GQRKBUMEATXJ
+  - '[SH.IAM.2] IAM users should not have IAM policies attached' : CKRCAIBXILFK
+  - '[SH.IAM.21] IAM customer managed policies that you create should not allow wildcard actions for services' : HQVLATIMVODA
+  - '[SH.IAM.3] IAM users access keys should be rotated every 90 days or less' : ZEJBJAESPURY
+  - '[SH.IAM.4] IAM root user access key should not exist' : MLZMKASTNAMJ
+  - '[SH.IAM.5] MFA should be enabled for all IAM users that have a console password' : JZAYNLETVJSZ
+  - '[SH.IAM.6] Hardware MFA should be enabled for the root user' : YXQAYRGZITSE
+  - '[SH.IAM.7] Password policies for IAM users should have strong configurations' : YJDQWPMKBQWV
+  - '[SH.IAM.8] Unused IAM user credentials should be removed' : DYZBFPIWFDCI
+  - '[SH.KMS.1] IAM customer managed policies should not allow decryption actions on all KMS keys' : ZYVSVOFNLTNG
+  - '[SH.KMS.2] IAM principals should not have IAM inline policies that allow decryption actions on all KMS keys' : QNVYEARPCKHY
+  - '[SH.KMS.3] AWS KMS keys should not be deleted unintentionally' : CKCEVZPVWRJV
+  - '[AWS-GR_LAMBDA_FUNCTION_PUBLIC_ACCESS_PROHIBITED] Detect whether the AWS Lambda function policy attached to the Lambda resource blocks public access' : AWS-GR_LAMBDA_FUNCTION_PUBLIC_ACCESS_PROHIBITED
+  - '[SH.Lambda.1] Lambda function policies should prohibit public access' : SRLPVJHNHYTD
+  - '[SH.Lambda.2] Lambda functions should use supported runtimes' : IOGKXEBDRDUW
+  - '[SH.Lambda.5] VPC Lambda functions should operate in more than one Availability Zone' : MHEKRUMWQLBJ
+  - '[SH.NetworkFirewall.3] Network Firewall policies should have at least one rule group associated' : DAEZMRPYHWWW
+  - '[SH.NetworkFirewall.4] The default stateless action for Network Firewall policies should be drop or forward for full packets' : HGOJKKYHHZHX
+  - '[SH.NetworkFirewall.5] The default stateless action for Network Firewall policies should be drop or forward for fragmented packets' : BATNHYBOOGVK
+  - '[SH.NetworkFirewall.6] Stateless network firewall rule group should not be empty' : KMTLZUHSLMDH
+  - '[SH.SecretsManager.1] Secrets Manager secrets should have automatic rotation enabled' : NVINDDWBCJID
+  - '[SH.SecretsManager.2] Secrets Manager secrets configured with automatic rotation should rotate successfully' : WMGPNBVAGVFK
+  - '[SH.SecretsManager.3] Remove unused Secrets Manager secrets' : QQURRKYALIYF
+  - '[SH.SecretsManager.4] Secrets Manager secrets should be rotated within a specified number of days' : SWGHBAYWQTEU
+  - '[AWS-GR_SSM_DOCUMENT_NOT_PUBLIC] Detect whether AWS Systems Manager documents owned by the account are public' : AWS-GR_SSM_DOCUMENT_NOT_PUBLIC
+  - '[SH.SSM.4] SSM documents should not be public' : QPOQERPDKUUL
+  - '[SH.WAF.2] A WAF Regional rule should have at least one condition' : HMAUVMDCZUKN
+  - '[SH.WAF.3] A WAF Regional rule group should have at least one rule' : KONSORMMHUGB
+  - '[SH.WAF.4] A WAF Regional web ACL should have at least one rule or rule group' : EDXGDDVAPQUE
+  - '[SH.ELB.10] Classic Load Balancer should span multiple Availability Zones' : FVCVSQHZTIZT
+  - '[SH.ELB.12] Application Load Balancer should be configured with defensive or strictest desync mitigation mode' : ZLQPMXHBILJA
+  - '[SH.ELB.13] Application, Network and Gateway Load Balancers should span multiple Availability Zones' : KXYVYWSAVBJH
+  - '[SH.ELB.14] Classic Load Balancer should be configured with defensive or strictest desync mitigation mode' : YFWVKLAFIBUY
+  - '[SH.ELB.2] Classic Load Balancers with SSL/HTTPS listeners should use a certificate provided by AWS Certificate Manager' : CDLXUWUBOOTY
+  - '[SH.ELB.3] Classic Load Balancer listeners should be configured with HTTPS or TLS termination' : FWOYTUVWHEYQ
+  - '[SH.ELB.4] Application load balancer should be configured to drop http headers' : HBTZGRURMOKM
+  - '[SH.ELB.5] Application and Classic Load Balancers logging should be enabled' : RRDKKWVTNZOH
+  - '[SH.ELB.6] Application Load Balancer deletion protection should be enabled' : SYVZPNNPLEGU
+  - '[SH.ELB.7] Classic Load Balancers should have connection draining enabled' : WHVUNZVVTRSQ
+  - '[SH.ELB.8] Classic Load Balancers with SSL listeners should use a predefined security policy that has strong configuration' : BORGQLJMFKKU
+  - '[SH.ELB.9] Classic Load Balancers should have cross-zone load balancing enabled' : LYMRJYHLDSDO
+  - '[SH.ELBv2.1] Application Load Balancer should be configured to redirect all HTTP requests to HTTPS' : PPNNYFOYSBQX
+Proactive: 
+  - '[CT.APIGATEWAY.PR.1] Require an Amazon API Gateway REST and WebSocket API to have logging activated' : THVNUTMFZVUS
+  - '[CT.APIGATEWAY.PR.2] Require an Amazon API Gateway REST API stage to have AWS X-Ray tracing activated' : EHSOKSSMVFWF
+  - '[CT.APIGATEWAY.PR.3] Require that an Amazon API Gateway REST API stage has encryption at rest configured for cache data' : FIMWSVKNFANN
+  - '[CT.APIGATEWAY.PR.4] Require an Amazon API Gateway V2 stage to have access logging activated' : CSLQUIKVRGVG
+  - '[CT.CLOUDFRONT.PR.1] Require an Amazon CloudFront distribution to have a default root object configured' : XDNLXQXCMXXF
+  - '[CT.CLOUDFRONT.PR.10] Require any Amazon CloudFront distributions with Amazon S3 backed origins to have origin access control configured' : MKKANNMZZHNU
+  - '[CT.CLOUDFRONT.PR.11] Require an Amazon CloudFront distribution to use updated SSL protocols between edge locations and custom origins' : JKSWKPYLWXBN
+  - '[CT.CLOUDFRONT.PR.2] Require any Amazon CloudFront distributions with Amazon S3 backed origins to have an origin access identity configured' : WPBVZXCJPXBZ
+  - '[CT.CLOUDFRONT.PR.3] Require an Amazon CloudFront distribution to have encryption in transit configured' : KSCPLCGJKGHW
+  - '[CT.CLOUDFRONT.PR.4] Require an Amazon CloudFront distribution to have origin failover configured' : TTGXTDSTFUVR
+  - '[CT.CLOUDFRONT.PR.5] Require any Amazon CloudFront distribution to have logging enabled' : RSBKBJHVWOCY
+  - '[CT.CLOUDFRONT.PR.6] Require an Amazon CloudFront distribution to use custom SSL/TLS certificates' : QFQNQHNDSHBP
+  - '[CT.CLOUDFRONT.PR.7] Require an Amazon CloudFront distribution to use SNI to serve HTTPS requests' : SFIAOWRGHFHB
+  - '[CT.CLOUDFRONT.PR.8] Require an Amazon CloudFront distribution to encrypt traffic to custom origins' : YPZYCTALWZLK
+  - '[CT.CLOUDFRONT.PR.9] Require an Amazon CloudFront distribution to have a security policy of TLSv1.2 as a minimum' : XCQMSOOMOOKF
+  - '[CT.DAX.PR.1] Require encryption at rest for all Amazon DynamoDB Accelerator (DAX) clusters' : EMIZNBUBWZST
+  - '[CT.DYNAMODB.PR.1] Require that point-in-time recovery for an Amazon DynamoDB table is activated' : OIZVLCBZARKX
+  - '[CT.EC2.PR.1] Require an Amazon EC2 launch template to have IMDSv2 configured' : NOTMRPTQNRAA
+  - '[CT.EC2.PR.10] Require Amazon EC2 launch templates to have Amazon CloudWatch detailed monitoring activated' : VAWEVAFBTTYX
+  - '[CT.EC2.PR.11] Require that an Amazon EC2 subnet does not automatically assign public IP addresses' : USZSBVLKBFJW
+  - '[CT.EC2.PR.12] Require an Amazon EC2 instance to configure one ENI only' : QNDKUCEIGRNB
+  - '[CT.EC2.PR.2] Require that Amazon EC2 launch templates restrict the token hop limit to a maximum of one' : CVFETGCJNKXF
+  - '[CT.EC2.PR.3] Require an Amazon EC2 security group to allow incoming traffic on authorized ports only' : VVDNPMRRUWKZ
+  - '[CT.EC2.PR.4] Require that an Amazon EC2 security group does not allow incoming traffic for high-risk ports' : KFDQQXDMBXXV
+  - '[CT.EC2.PR.5] Require any Amazon EC2 network ACL to prevent ingress from 0.0.0.0/0 to port 22 or port 3389' : DUQKORYIWJYQ
+  - '[CT.EC2.PR.6] Require that Amazon EC2 transit gateways refuse automatic Amazon VPC attachment requests' : THHTKPOPPVGC
+  - '[CT.EC2.PR.7] Require that an Amazon EBS volume attached to an Amazon EC2 instance is encrypted at rest' : TORIRIQKVTCS
+  - '[CT.EC2.PR.8] Require any Amazon EC2 instance to have a non-public IP address' : SZOFEUATQICK
+  - '[CT.EC2.PR.9] Require any Amazon EC2 launch template not to auto-assign public IP addresses to network interfaces' : CUDBAEGSAETL
+  - '[CT.ECR.PR.1] Require Amazon ECR repositories to have a lifecycle policy configured' : QXNBGIPKJBEQ
+  - '[CT.ECR.PR.2] Require Amazon ECR private repositories to have image scanning enabled' : MOWSMMNGTNEJ
+  - '[CT.ECR.PR.3] Require Amazon ECR private repositories to have tag immutability enabled' : RKDZMSUYQTHO
+  - '[CT.ECS.PR.1] Require AWS ECS Fargate Services to run on the latest Fargate platform version' : MHZENEKNVRDM
+  - '[CT.ECS.PR.10] Require that Amazon ECS task definitions do not share the hosts process namespace' : SIJXAEJNCZRU
+  - '[CT.ECS.PR.11] Require an Amazon ECS container to run as non-privileged' : FKKIKNEMQIMG
+  - '[CT.ECS.PR.12] Require that Amazon ECS task definitions do not pass secrets as container environment variables' : AMSZNQJFMYFK
+  - '[CT.ECS.PR.2] Require any Amazon ECS cluster to have container insights activated' : BYFWXRYSYXBV
+  - '[CT.ECS.PR.3] Require any Amazon ECS task definition to specify a user that is not the root' : GFAVSWYHDTND
+  - '[CT.ECS.PR.4] Require Amazon ECS tasks to use awsvpc networking mode' : YAGJMMJCIQDQ
+  - '[CT.ECS.PR.5] Require an active Amazon ECS task definition to have a logging configuration' : WLNVQYRKIGTC
+  - '[CT.ECS.PR.6] Require Amazon ECS containers to allow read-only access to the root filesystem' : JTWWGRQVPNPA
+  - '[CT.ECS.PR.7] Require an Amazon ECS task definition to have a specific memory usage limit' : KXUMGTKTEKZR
+  - '[CT.ECS.PR.8] Require Amazon ECS task definitions to have secure networking modes and user definitions' : KKVIYLEZFGKT
+  - '[CT.ECS.PR.9] Require Amazon ECS services not to assign public IP addresses automatically' : ULWRYYUOYETK
+  - '[CT.ELASTICFILESYSYSTEM.PR.1] Require an Amazon EFS file system to encrypt file data at rest using AWS KMS' : DDRMDDRSTNIU
+  - '[CT.ELASTICFILESYSYSTEM.PR.2] Require an Amazon EFS volume to have an automated backup plan' : AQYLHRCHTYFH
+  - '[CT.ELASTICFILESYSYSTEM.PR.3] Require Amazon EFS access points to have a root directory' : JVOEMQJALNEH
+  - '[CT.ELASTICFILESYSYSTEM.PR.4] Require Amazon EFS access points to enforce a user identity' : SOCNUAYXONKJ
+  - '[CT.GUARDDUTY.PR.1] Require an Amazon GuardDuty detector to have Amazon S3 protection activated' : HDYIPPMSWZOU
+  - '[CT.KINESIS.PR.1] Require any Amazon Kinesis data stream to have encryption at rest configured' : HUIOKNICCRBB
+  - '[CT.RDS.PR.1] Require that an Amazon RDS database instance is configured with multiple Availability Zones' : CIPCPCUPIFSX
+  - '[CT.RDS.PR.10] Require an Amazon RDS database instance to copy tags to snapshots' : TDLAWEVSVJFW
+  - '[CT.RDS.PR.11] Require an Amazon RDS database instance to have a VPC configuration' : SBVAEBQZFXKJ
+  - '[CT.RDS.PR.12] Require an Amazon RDS event subscription to have critical cluster events configured' : UDBQCAZJXEAD
+  - '[CT.RDS.PR.13] Require any Amazon RDS instance to have deletion protection configured' : YPJCCMKZJPTP
+  - '[CT.RDS.PR.14] Require an Amazon RDS database instance to have logging configured' : WHWIIFCOKJQR
+  - '[CT.RDS.PR.15] Require that an Amazon RDS instance does not create DB security groups' : BIMBKOKMEZXP
+  - '[CT.RDS.PR.16] Require an Amazon RDS database cluster to have encryption at rest configured' : FYVNKTVAUTPK
+  - '[CT.RDS.PR.17] Require an Amazon RDS event notification subscription to have critical database instance events configured' : SHNJOPQEZHOH
+  - '[CT.RDS.PR.18] Require an Amazon RDS event notification subscription to have critical database parameter group events configured' : HMGIGLGDRMZO
+  - '[CT.RDS.PR.19] Require an Amazon RDS event notifications subscription to have critical database security group events configured' : OURUAERHLOFJ
+  - '[CT.RDS.PR.2] Require an Amazon RDS database instance or cluster to have enhanced monitoring configured' : MQISZILRTSFB
+  - '[CT.RDS.PR.20] Require an Amazon RDS database instance not to use a database engine default port' : MDWFCNUYEZKH
+  - '[CT.RDS.PR.21] Require an Amazon RDS DB cluster to have a unique administrator username' : EITXJLKFTQDP
+  - '[CT.RDS.PR.22] Require an Amazon RDS database instance to have a unique administrator username' : RPMTGTPXFHVA
+  - '[CT.RDS.PR.23] Require an Amazon RDS database instance to not be publicly accessible' : PWBOAFLALALP
+  - '[CT.RDS.PR.24] Require an Amazon RDS database instance to have encryption at rest configured' : GFMSMJAELTVU
+  - '[CT.RDS.PR.3] Require an Amazon RDS cluster to have deletion protection configured' : BOMCHCSYCWLF
+  - '[CT.RDS.PR.4] Require an Amazon RDS database cluster to have AWS IAM database authentication configured' : QWKDSRVLGQJM
+  - '[CT.RDS.PR.5] Require an Amazon RDS database instance to have minor version upgrades configured' : UNSIZPXYZKNF
+  - '[CT.RDS.PR.6] Require an Amazon RDS database cluster to have backtracking configured' : HQQCINNCIEGJ
+  - '[CT.RDS.PR.7] Require Amazon RDS database instances to have AWS IAM authentication configured' : EFJRJBUAWLRY
+  - '[CT.RDS.PR.8] Require an Amazon RDS database instance to have automatic backups configured' : QETNOOVEKOPL
+  - '[CT.RDS.PR.9] Require an Amazon RDS database cluster to copy tags to snapshots' : RDSPGIJXTCPR
+  - '[CT.REDSHIFT.PR.1] Require an Amazon Redshift cluster to prohibit public access' : YKEAYOGIETJW
+  - '[CT.REDSHIFT.PR.2] Require an Amazon Redshift cluster to have automatic snapshots configured' : VVOXNJWWCUTZ
+  - '[CT.REDSHIFT.PR.3] Require an Amazon Redshift cluster to have audit logging configured' : TIGRGIIZLNWY
+  - '[CT.REDSHIFT.PR.4] Require an Amazon Redshift cluster to have automatic upgrades to major versions configured' : RSYQCHSJXMVQ
+  - '[CT.REDSHIFT.PR.5] Require an Amazon Redshift cluster to have enhanced VPC routing' : MVWDSPIZQQOJ
+  - '[CT.REDSHIFT.PR.6] Require an Amazon Redshift cluster to have a unique administrator username' : XSJEOQVHQNRS
+  - '[CT.REDSHIFT.PR.7] Require an Amazon Redshift cluster to have a unique database name' : XTYTGDHUVKCR
+  - '[CT.S3.PR.1] Require an Amazon S3 bucket to have block public access settings configured' : HOHCXWHXKJEM
+  - '[CT.S3.PR.2] Require an Amazon S3 bucket to have server access logging configured' : QUYPCYYEALDZ
+  - '[CT.S3.PR.3] Require an Amazon S3 buckets to have versioning configured and a lifecycle policy' : WNDCHAPIOWPX
+  - '[CT.S3.PR.4] Require an Amazon S3 bucket to have event notifications configured' : YBVXNKBMJYZO
+  - '[CT.S3.PR.5] Require that an Amazon S3 bucket does not manage user access with an access control list (ACL)' : IIICSISZKWBP
+  - '[CT.S3.PR.6] Require an Amazon S3 bucket to have lifecycle policies configured' : EXSYSTLXGVRE
+  - '[CT.S3.PR.7] Require an Amazon S3 bucket to have server-side encryption configured' : PCBBDCESRSLI
+  - '[CT.S3.PR.8] Require that Amazon S3 buckets request to use Secure Socket Layer' : KQIDXVAURPNL
+  - '[CT.SQS.PR.1] Require any Amazon SQS queue to have a dead-letter queue configured' : WHMAMEUKIFGE
+  - '[CT.SQS.PR.2] Require any Amazon SQS queue to have encryption at rest configured' : JBIFAREFXJYH
+  - '[CT.ACM.PR.1] Require an AWS Private CA certificate to have a single domain name' : CWIZNCRIHXMW
+  - '[CT.CLOUDTRAIL.PR.1] Require an AWS CloudTrail trail to have encryption at rest activated' : EPNCREENAXLY
+  - '[CT.CLOUDTRAIL.PR.2] Require an AWS CloudTrail trail to have log file validation activated' : ZOBWKZJTOUFY
+  - '[CT.CLOUDTRAIL.PR.3] Require an AWS CloudTrail trail to have an Amazon CloudWatch log group configuration' : DZJUTMXLWLMF
+  - '[CT.CODEBUILD.PR.1] Require OAuth on GitHub or Bitbucket source repository URLs for AWS CodeBuild projects' : JIMFDEAQDWCK
+  - '[CT.CODEBUILD.PR.2] Require any AWS CodeBuild project environment variable to encrypt credentials in environment variables' : EJNHNFZRAMFG
+  - '[CT.CODEBUILD.PR.3] Require any AWS CodeBuild project environment to have logging configured' : YEHYWYAUIQHZ
+  - '[CT.CODEBUILD.PR.4] Require any AWS CodeBuild project to deactivate privileged mode when running' : RBXKQFZQEPSP
+  - '[CT.CODEBUILD.PR.5] Require encryption on all AWS CodeBuild project artifacts' : OJSTETVYFKHE
+  - '[CT.CODEBUILD.PR.6] Require encryption on all Amazon S3 logs for AWS CodeBuild projects' : WEEZOKNMKWFK
+  - '[CT.DMS.PR.1] Require that a public AWS DMS replication instance is not public' : TZMIGTNDHQVL
+  - '[CT.ELASTICBEANSTALK.PR.1] Require AWS Elastic Beanstalk environments to have enhanced health reporting enabled' : TMNYCDENFCPB
+  - '[CT.ELASTICBEANSTALK.PR.2] Require an AWS Elastic Beanstalk environment to have managed platform updates configured' : CGCIUYTOZICW
+  - '[CT.IAM.PR.1] Require that an AWS Identity and Access Management (IAM) inline policy does not have a statement that includes "*" in the Action and Resource elements' : JMBMAKMUHMKC
+  - '[CT.IAM.PR.2] Require that AWS Identity and Access Management (IAM) customer-managed policies do not contain a statement that includes "*" in the Action and Resource elements' : PNOCTMYIRAQZ
+  - '[CT.IAM.PR.3] Require that AWS Identity and Access Management (IAM) customer-managed policies do not have wildcard service actions' : XJWBVKPDALLC
+  - '[CT.IAM.PR.4] Require that an AWS Identity and Access Management (IAM) user does not have an inline or managed policy attached attached' : BGEGSPWZQGHE
+  - '[CT.IAM.PR.5] Require that AWS Identity and Access Management (IAM) inline policies do not have wildcard service actions' : CCMOVWIXYLYF
+  - '[CT.KMS.PR.1] Require any AWS KMS key to have rotation configured' : VULBAJMYDWHA
+  - '[CT.LAMBDA.PR.2] Require AWS Lambda function policies to prohibit public access' : GFCPWDHPFTHD
+  - '[CT.NETWORK-FIREWALL.PR.1] Require any AWS Network Firewall firewall policy to have an associated rule group' : MOWFCDWVPVGY
+  - '[CT.NETWORK-FIREWALL.PR.2] Require any AWS Network Firewall firewall policy to drop or forward stateless full packets by default when they do not match a rule' : SXRZLKJBMDWS
+  - '[CT.NETWORK-FIREWALL.PR.3] Require any AWS Network Firewall firewall policy to drop or forward fragmented packets by default when they do not match a stateless rule' : PQSYWADLSXIQ
+  - '[CT.NETWORK-FIREWALL.PR.4] Require any AWS Network Firewall rule group to contain at least one rule' : OFYAEXYSCBOV
+  - '[CT.WAF-REGIONAL.PR.1] Require any AWS WAF regional rule to have a condition' : DIPWBOCJUTTO
+  - '[CT.WAF-REGIONAL.PR.2] Require any AWS WAF regional web access control list (ACL) to have a rule or rule group' : FQEZXYFKDEXW
+  - '[CT.WAF.PR.1] Require any AWS WAF global rule to have a condition' : UNASESNVHVZY
+  - '[CT.WAF.PR.2] Require any AWS WAF global web ACL to have a rule or rule group' : EVTLDFVJREHX
+  - '[CT.WAFV2.PR.1] Require an AWS WAFV2 web ACL to be non-empty' : XEONMNFZMEEF
+  - '[CT.WAFV2.PR.2] Require an AWS WAFV2 rule group to be non-empty' : BUWSNZUCOYKV
+  - '[CT.ELASTICLOADBALANCING.PR.1] Require any application load balancer listener default actions to redirect all HTTP requests to HTTPS' : RZVUTRWTVEUO
+  - '[CT.ELASTICLOADBALANCING.PR.10] Require an ELB application or classic load balancer to have logging activated' : HUFENJFLXLUB
+  - '[CT.ELASTICLOADBALANCING.PR.11] Require any ELB classic load balancer to have connection draining activated' : INJPMXMBQMRQ
+  - '[CT.ELASTICLOADBALANCING.PR.12] Require any ELB classic load balancer SSL/HTTPS listener to have a predefined security policy with a strong configuration' : WWSARQYKGSTH
+  - '[CT.ELASTICLOADBALANCING.PR.13] Require any ELB classic load balancer to have cross-zone load balancing activated' : YYKNHLJGCTZX
+  - '[CT.ELASTICLOADBALANCING.PR.2] Require any Amazon ELB application or network load balancer to have an AWS Certificate Manager certificate' : TWNOUSHMRFWV
+  - '[CT.ELASTICLOADBALANCING.PR.3] Require any application load balancer to have defensive or strictest desync mitigation mode activated' : VLCKSWJHUUNN
+  - '[CT.ELASTICLOADBALANCING.PR.4] Require that any application load balancer must be configured to drop HTTP headers' : ZVVUGGRKPSNF
+  - '[CT.ELASTICLOADBALANCING.PR.5] Require that application load balancer deletion protection is activated' : XZMJRFQFABFQ
+  - '[CT.ELASTICLOADBALANCING.PR.6] Require that application and network load balancer access logging is activated' : ACYJDQTSIBRW
+  - '[CT.ELASTICLOADBALANCING.PR.7] Require any classic load balancer to have multiple Availability Zones configured' : CWXBBUJAKHIY
+  - '[CT.ELASTICLOADBALANCING.PR.8] Require any classic load balancer SSL/HTTPS listener to have a certificate provided by AWS Certificate Manager' : OQYKDUWYEOIM
+  - '[CT.ELASTICLOADBALANCING.PR.9] Require that an AWS ELB application or classic load balancer listener is configured with HTTPS or TLS termination' : OJRPUPOEBOGC
+Preventive: 
+  - '[AWS-GR_DISALLOW_VPC_INTERNET_ACCESS] Disallow internet access for an Amazon VPC instance managed by a customer' : AWS-GR_DISALLOW_VPC_INTERNET_ACCESS
+  - '[AWS-GR_DISALLOW_VPN_CONNECTIONS] Disallow Amazon Virtual Private Network (VPN) connections' : AWS-GR_DISALLOW_VPN_CONNECTIONS
+  - '[AWS-GR_AUDIT_BUCKET_ENCRYPTION_ENABLED] Disallow Changes to Encryption Configuration for Amazon S3 Buckets' : AWS-GR_AUDIT_BUCKET_ENCRYPTION_ENABLED
+  - '[AWS-GR_AUDIT_BUCKET_LOGGING_ENABLED] Disallow Changes to Logging Configuration for Amazon S3 Buckets' : AWS-GR_AUDIT_BUCKET_LOGGING_ENABLED
+  - '[AWS-GR_AUDIT_BUCKET_POLICY_CHANGES_PROHIBITED] Disallow Changes to Bucket Policy for Amazon S3 Buckets' : AWS-GR_AUDIT_BUCKET_POLICY_CHANGES_PROHIBITED
+  - '[AWS-GR_AUDIT_BUCKET_RETENTION_POLICY] Disallow Changes to Lifecycle Configuration for Amazon S3 Buckets' : AWS-GR_AUDIT_BUCKET_RETENTION_POLICY
+  - '[AWS-GR_RESTRICT_S3_CROSS_REGION_REPLICATION] Disallow changes to replication configuration for Amazon S3 buckets' : AWS-GR_RESTRICT_S3_CROSS_REGION_REPLICATION
+  - '[AWS-GR_RESTRICT_S3_DELETE_WITHOUT_MFA] Disallow delete actions on S3 buckets without MFA' : AWS-GR_RESTRICT_S3_DELETE_WITHOUT_MFA
+  - '[AWS-GR_DISALLOW_CROSS_REGION_NETWORKING] Disallow cross-region networking for Amazon EC2, Amazon CloudFront, and AWS Global Accelerator' : AWS-GR_DISALLOW_CROSS_REGION_NETWORKING
+  - '[AWS-GR_REGION_DENY] Deny access to AWS based on the requested AWS Region' : AWS-GR_REGION_DENY
